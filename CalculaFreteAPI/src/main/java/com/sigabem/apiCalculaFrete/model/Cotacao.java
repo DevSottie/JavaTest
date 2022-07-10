@@ -1,5 +1,8 @@
 package com.sigabem.apiCalculaFrete.model;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,9 +26,9 @@ public class Cotacao {
 	
 	private double vlTotalFrete;
 	
-	private String dataPrevistaEntrega;
+	private Calendar dataPrevistaEntrega;
 	
-	private String dataConsulta;
+	private Calendar dataConsulta;
 
 	public Long getId() {
 		return id;
@@ -75,19 +78,19 @@ public class Cotacao {
 		this.vlTotalFrete = vlTotalFrete;
 	}
 
-	public String getDataPrevistaEntrega() {
+	public Calendar getDataPrevistaEntrega() {
 		return dataPrevistaEntrega;
 	}
 
-	public void setDataPrevistaEntrega(String dataPrevistaEntrega) {
+	public void setDataPrevistaEntrega(Calendar dataPrevistaEntrega) {
 		this.dataPrevistaEntrega = dataPrevistaEntrega;
 	}
 
-	public String getDataConsulta() {
+	public Calendar getDataConsulta() {
 		return dataConsulta;
 	}
 
-	public void setDataConsulta(String dataConsulta) {
+	public void setDataConsulta(Calendar dataConsulta) {
 		this.dataConsulta = dataConsulta;
 	}
 	

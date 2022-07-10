@@ -35,8 +35,11 @@ public class CalculaFreteController {
 	
 	@PostMapping
 	public ResponseEntity<CotacaoResponseDto> mostraCotacao(@RequestBody @Valid CotacaoRequestDto cotacaoRequest){
-		ViaCepResponseDto cepValidado = ;  
-		CotacaoResponseDto cotacaoResponse = new CotacaoResponseDto();
+		ViaCepResponseDto cepValidadoOrigem = viaCepService.consultaCep(cotacaoRequest.getCepOrigem());
+		ViaCepResponseDto cepValidadoDestino = viaCepService.consultaCep(cotacaoRequest.getCepDestino());
+		
+		CotacaoResponseDto cotacaoResponse = calculaFreteService.calculaFrete(cepValidadoOrigem, cepValidadoDestino, cotacaoRequest);
+		
 		return ResponseEntity.ok().body(cotacaoResponse);
 	}
 

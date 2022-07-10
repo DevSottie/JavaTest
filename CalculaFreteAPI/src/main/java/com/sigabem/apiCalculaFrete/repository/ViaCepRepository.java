@@ -6,6 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.google.gson.Gson;
 
@@ -15,9 +16,14 @@ import com.sigabem.apiCalculaFrete.dto.ViaCepResponseDto;
 @Service
 public class ViaCepRepository{
 	
-	public static ViaCepResponseDto consultaCep(String cep) throws Exception{
+	public static ViaCepResponseDto consultaCep(String cep){
+		
+		RestTemplate restTemplate = new RestTemplate();
+		ViaCepResponseDto cepValidado = restTemplate.getForObject("https://viacep.com.br/ws/" + cep + "/json/", ViaCepResponseDto.class);
+		
+		return cepValidado;
 	
-		 try {
+		 /*try {
 	            URL url = new URL("https://viacep.com.br/ws/" + cep + "/json/");
 	            HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
 
@@ -38,7 +44,7 @@ public class ViaCepRepository{
 	            return endereco;
 	        } catch (Exception e) {
 	            throw new Exception("ERRO: " + e);
-	        }
+	        }*/
 	
 	}
 }

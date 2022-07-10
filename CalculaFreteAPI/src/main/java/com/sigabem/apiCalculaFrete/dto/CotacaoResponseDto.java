@@ -1,5 +1,8 @@
 package com.sigabem.apiCalculaFrete.dto;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class CotacaoResponseDto {
 
 	private double vlTotalFrete;
