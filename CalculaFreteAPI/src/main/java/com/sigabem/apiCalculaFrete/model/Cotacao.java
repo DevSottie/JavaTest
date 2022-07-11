@@ -1,7 +1,6 @@
 package com.sigabem.apiCalculaFrete.model;
 
 import java.util.Calendar;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

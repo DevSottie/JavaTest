@@ -1,11 +1,7 @@
 package com.sigabem.apiCalculaFrete.parser;
 
 import java.text.DateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 import com.sigabem.apiCalculaFrete.dto.CotacaoRequestDto;
 import com.sigabem.apiCalculaFrete.dto.CotacaoResponseDto;
