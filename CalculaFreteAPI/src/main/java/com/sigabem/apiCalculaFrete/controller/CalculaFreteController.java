@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sigabem.apiCalculaFrete.dto.CotacaoRequestDto;
 import com.sigabem.apiCalculaFrete.dto.CotacaoResponseDto;
-import com.sigabem.apiCalculaFrete.dto.ViaCepResponseDto;
+import com.sigabem.apiCalculaFrete.dto.ViaCepDto;
 import com.sigabem.apiCalculaFrete.model.Cotacao;
 import com.sigabem.apiCalculaFrete.service.CalculaFreteService;
 import com.sigabem.apiCalculaFrete.service.ViaCepService;
@@ -52,8 +52,8 @@ public class CalculaFreteController {
 				}
 			)
 	public ResponseEntity<CotacaoResponseDto> mostraCotacao(@RequestBody @Valid CotacaoRequestDto cotacaoRequest){
-		ViaCepResponseDto cepValidadoOrigem = viaCepService.consultaCep(cotacaoRequest.getCepOrigem());
-		ViaCepResponseDto cepValidadoDestino = viaCepService.consultaCep(cotacaoRequest.getCepDestino());
+		ViaCepDto cepValidadoOrigem = viaCepService.consultaCep(cotacaoRequest.getCepOrigem());
+		ViaCepDto cepValidadoDestino = viaCepService.consultaCep(cotacaoRequest.getCepDestino());
 		
 		CotacaoResponseDto cotacaoResponse = calculaFreteService.calculaFrete(cepValidadoOrigem, cepValidadoDestino, cotacaoRequest);
 		

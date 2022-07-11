@@ -5,12 +5,12 @@ import java.util.Calendar;
 
 import com.sigabem.apiCalculaFrete.dto.CotacaoRequestDto;
 import com.sigabem.apiCalculaFrete.dto.CotacaoResponseDto;
-import com.sigabem.apiCalculaFrete.dto.ViaCepResponseDto;
+import com.sigabem.apiCalculaFrete.dto.ViaCepDto;
 import com.sigabem.apiCalculaFrete.model.Cotacao;
 
 public class CotacaoParser {
 	
-	public CotacaoResponseDto requestToResponse(ViaCepResponseDto cepValidadoOrigem, ViaCepResponseDto cepValidadoDestino, double vlTotalFrete, Calendar dataPrevistaEntrega) {
+	public CotacaoResponseDto requestToResponse(ViaCepDto cepValidadoOrigem, ViaCepDto cepValidadoDestino, double vlTotalFrete, Calendar dataPrevistaEntrega) {
 		CotacaoResponseDto cotacaoResponseDto = new CotacaoResponseDto();
 		DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM);
 		

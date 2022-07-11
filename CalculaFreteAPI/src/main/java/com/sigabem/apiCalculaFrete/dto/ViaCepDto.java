@@ -1,6 +1,6 @@
 package com.sigabem.apiCalculaFrete.dto;
 
-public class ViaCepResponseDto {
+public class ViaCepDto {
 	private String cep;
 	private String logradouro;
 	private String complemento;

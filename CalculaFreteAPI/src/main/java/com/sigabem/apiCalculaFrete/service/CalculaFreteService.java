@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.sigabem.apiCalculaFrete.dto.CotacaoRequestDto;
 import com.sigabem.apiCalculaFrete.dto.CotacaoResponseDto;
-import com.sigabem.apiCalculaFrete.dto.ViaCepResponseDto;
+import com.sigabem.apiCalculaFrete.dto.ViaCepDto;
 import com.sigabem.apiCalculaFrete.model.Cotacao;
 import com.sigabem.apiCalculaFrete.parser.CotacaoParser;
 import com.sigabem.apiCalculaFrete.repository.CalculaFreteRepository;
@@ -24,7 +24,7 @@ public class CalculaFreteService {
 		return calculaFreteRepository.findAll().stream().toList();
 	}
 	
-	public CotacaoResponseDto calculaFrete(ViaCepResponseDto cepValidadoOrigem, ViaCepResponseDto cepValidadoDestino, CotacaoRequestDto cotacaoRequest){
+	public CotacaoResponseDto calculaFrete(ViaCepDto cepValidadoOrigem, ViaCepDto cepValidadoDestino, CotacaoRequestDto cotacaoRequest){
 		CotacaoResponseDto cotacaoResponse = new CotacaoResponseDto();
 		CotacaoParser parser = new CotacaoParser();
 		Cotacao cotacao = new Cotacao();
